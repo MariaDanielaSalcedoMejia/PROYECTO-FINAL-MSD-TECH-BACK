@@ -37,7 +37,7 @@ router.post(
 
 router.put(
   "/cambiocontrasena",
-  validateJWTPass,
+ 
   [
     check("password", "El password es obligatorio").not().isEmpty(),
     validateFields,

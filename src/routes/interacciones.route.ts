@@ -1,5 +1,6 @@
 import { crearInteraccion, eliminarInteraccion, getInteraccion, getInteracciones, updateInteraccion } from "../controllers/interacciones.controller";
 import { Router } from "express";
+import { validateJWT } from "../middlewares/validate-jwt";
 
 //creando path
 //path/api/v1/interaccion

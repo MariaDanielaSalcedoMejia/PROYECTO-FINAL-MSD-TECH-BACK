@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { crearCliente, eliminarCliente, getCliente, getClientes, updateCliente } from "../controllers/cliente.controller";
+import { validateJWT } from "../middlewares/validate-jwt";
 
 
 //creando path

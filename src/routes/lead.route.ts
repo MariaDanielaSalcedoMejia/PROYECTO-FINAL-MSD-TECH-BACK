@@ -1,3 +1,4 @@
+import { validateJWT } from '../middlewares/validate-jwt';
 import { crearLead, eliminarLead, getLead, getLeads, updatelead } from './../controllers/lead.controller';
 import { Router } from "express";
 
