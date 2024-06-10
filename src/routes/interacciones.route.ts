@@ -7,10 +7,10 @@ import { validateJWT } from "../middlewares/validate-jwt";
 
 const router = Router();
 
-router.post("/",crearInteraccion);
-router.get("/", getInteracciones);
-router.get("/:id", getInteraccion);
-router.delete("/:id", eliminarInteraccion);
-router.put("/:id", updateInteraccion);
+router.post("/", validateJWT, crearInteraccion);
+router.get("/", validateJWT, getInteracciones);
+router.get("/:id", validateJWT, getInteraccion);
+router.delete("/:id", validateJWT, eliminarInteraccion);
+router.put("/:id", validateJWT, updateInteraccion);
 
 export default router;

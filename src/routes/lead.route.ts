@@ -8,10 +8,10 @@ import { Router } from "express";
 
 const router = Router();
 
-router.post("/", crearLead);
-router.get("/", getLeads);
-router.get("/:id", getLead);
-router.delete("/:id", eliminarLead);
-router.put("/:id", updatelead);
+router.post("/", validateJWT, crearLead);
+router.get("/", validateJWT, getLeads);
+router.get("/:id", validateJWT, getLead);
+router.delete("/:id", validateJWT, eliminarLead);
+router.put("/:id", validateJWT, updatelead);
 
 export default router;

@@ -8,10 +8,10 @@ import { validateJWT } from "../middlewares/validate-jwt";
 
 const router = Router();
 
-router.post("/", crearCliente);
-router.get("/", getClientes);
-router.get("/:id", getCliente);
-router.delete("/:id", eliminarCliente);
-router.put("/:id", updateCliente);
+router.post("/", validateJWT, crearCliente);
+router.get("/", validateJWT, getClientes);
+router.get("/:id", validateJWT, getCliente);
+router.delete("/:id", validateJWT, eliminarCliente);
+router.put("/:id", validateJWT, updateCliente);
 
 export default router;
