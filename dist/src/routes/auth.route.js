@@ -40,10 +40,10 @@ router.post("/", [
 ], auth_controller_1.login);
 /**
  * @swagger
- * /auth/olvidocontrasena:
+ * /login/olvidocontrasena:
  *   post:
  *     tags:
- *       - Auth
+ *       - Login
  *     summary: Solicitar cambio de contraseña
  *     requestBody:
  *       required: true
@@ -74,10 +74,10 @@ router.post("/olvidocontrasena", [
 ], auth_controller_1.olvidoContrasena);
 /**
  * @swagger
- * /auth/cambiocontrasena:
+ * /login/cambiocontrasena:
  *   put:
  *     tags:
- *       - Auth
+ *       - Login
  *     summary: Cambiar contraseña
  *     requestBody:
  *       required: true
@@ -102,10 +102,10 @@ router.put("/cambiocontrasena", [
 ], auth_controller_1.cambioContrasena);
 /**
  * @swagger
- * /auth:
+ * /login:
  *   get:
  *     tags:
- *       - Auth
+ *       - Login
  *     summary: Renovar token
  *     responses:
  *       200:

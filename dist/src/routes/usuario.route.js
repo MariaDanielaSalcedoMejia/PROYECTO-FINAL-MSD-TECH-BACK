@@ -13,7 +13,7 @@ const router = (0, express_1.Router)();
  * /usuario:
  *   post:
  *     tags:
- *       - Usuarios
+ *       - usuario
  *     summary: Crea un nuevo usuario
  *     requestBody:
  *       required: true
@@ -25,17 +25,30 @@ const router = (0, express_1.Router)();
  *               nombre:
  *                 type: string
  *                 description: El nombre del usuario.
- *               numeroDocumento:
- *                 type: string
- *                 description: El número de documento del usuario.
  *               email:
  *                 type: string
  *                 format: email
  *                 description: El correo electrónico del usuario.
+ *              tipoDocumento:
+ *                 type:string
+ *              numeroDocumento:
+ *                 type: string
+ *                 description: El número de documento del usuario.
+ *              numeroCelular:
+ *                 type: number
+ *              password:
+ *                 type: string
+ *              rol:
+ *                 type:string
+ *
  *             required:
  *               - nombre
  *               - numeroDocumento
  *               - email
+ *               - numeroCelular
+ *               - password
+ *               - tipoDocumento
+ *
  *     responses:
  *       200:
  *         description: Usuario creado exitosamente
@@ -62,7 +75,7 @@ router.post("/", [
  * /usuario:
  *   get:
  *     tags:
- *       - Usuarios
+ *       - usuario
  *     summary: Obtiene una lista de todos los usuarios
  *     responses:
  *       200:
@@ -80,7 +93,7 @@ router.get("/", usuario_controller_1.getUsuarios);
  * /usuario/{id}:
  *   get:
  *     tags:
- *       - Usuarios
+ *       - usuario
  *     summary: Obtiene un usuario por ID
  *     parameters:
  *       - in: path
@@ -105,7 +118,7 @@ router.get("/:id", validate_jwt_1.validateJWT, usuario_controller_1.getUnUsuario
  * /usuario/{id}:
  *   put:
  *     tags:
- *       - Usuarios
+ *       - usuario
  *     summary: Actualiza un usuario por ID
  *     parameters:
  *       - in: path
@@ -138,7 +151,7 @@ router.put("/:id", validate_jwt_1.validateJWT, usuario_controller_1.updateUsuari
  * /usuario/{id}:
  *   delete:
  *     tags:
- *       - Usuarios
+ *       - usuario
  *     summary: Elimina un usuario por ID
  *     parameters:
  *       - in: path

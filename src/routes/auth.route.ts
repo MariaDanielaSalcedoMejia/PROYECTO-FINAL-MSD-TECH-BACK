@@ -50,10 +50,10 @@ router.post(
 
 /**
  * @swagger
- * /auth/olvidocontrasena:
+ * /login/olvidocontrasena:
  *   post:
  *     tags:
- *       - Auth
+ *       - Login
  *     summary: Solicitar cambio de contraseña
  *     requestBody:
  *       required: true
@@ -89,10 +89,10 @@ router.post(
 
 /**
  * @swagger
- * /auth/cambiocontrasena:
+ * /login/cambiocontrasena:
  *   put:
  *     tags:
- *       - Auth
+ *       - Login
  *     summary: Cambiar contraseña
  *     requestBody:
  *       required: true
@@ -122,10 +122,10 @@ router.put(
 
 /**
  * @swagger
- * /auth:
+ * /login:
  *   get:
  *     tags:
- *       - Auth
+ *       - Login
  *     summary: Renovar token
  *     responses:
  *       200:

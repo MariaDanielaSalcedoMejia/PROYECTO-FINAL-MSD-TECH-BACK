@@ -18,7 +18,15 @@ const router = (0, express_1.Router)();
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Lead'
+ *             type: object
+ *             properties:
+ *               cliente:
+ *                 type: string
+ *               descripcion:
+ *                 type: string
+ *               estado:
+ *                 type:boolean
+ *
  *     responses:
  *       200:
  *         description: Lead creado exitosamente
@@ -35,7 +43,7 @@ router.post("/", validate_jwt_1.validateJWT, lead_controller_1.crearLead);
  * /lead:
  *   get:
  *     tags:
- *       - Leads
+ *       - Lead
  *     summary: Obtiene una lista de todos los leads
  *     responses:
  *       200:
@@ -53,7 +61,7 @@ router.get("/", validate_jwt_1.validateJWT, lead_controller_1.getLeads);
  * /lead/{id}:
  *   get:
  *     tags:
- *       - Leads
+ *       - Lead
  *     summary: Obtiene un lead por ID
  *     parameters:
  *       - in: path
@@ -78,7 +86,7 @@ router.get("/:id", validate_jwt_1.validateJWT, lead_controller_1.getLead);
  * /lead/{id}:
  *   delete:
  *     tags:
- *       - Leads
+ *       - Lead
  *     summary: Elimina un lead por ID
  *     parameters:
  *       - in: path
@@ -99,7 +107,7 @@ router.delete("/:id", validate_jwt_1.validateJWT, lead_controller_1.eliminarLead
  * /lead/{id}:
  *   put:
  *     tags:
- *       - Leads
+ *       - Lead
  *     summary: Actualiza un lead por ID
  *     parameters:
  *       - in: path

@@ -11,7 +11,7 @@ const router = (0, express_1.Router)();
  * /cliente:
  *   post:
  *     tags:
- *       - Clientes
+ *       - Cliente
  *     summary: Crea un nuevo cliente
  *     requestBody:
  *       required: true
@@ -35,7 +35,7 @@ router.post("/", validate_jwt_1.validateJWT, cliente_controller_1.crearCliente);
  * /cliente:
  *   get:
  *     tags:
- *       - Clientes
+ *       - Cliente
  *     summary: Obtiene una lista de todos los clientes
  *     responses:
  *       200:
@@ -53,7 +53,7 @@ router.get("/", validate_jwt_1.validateJWT, cliente_controller_1.getClientes);
  * /cliente/{id}:
  *   get:
  *     tags:
- *       - Clientes
+ *       - Cliente
  *     summary: Obtiene un cliente por su ID
  *     parameters:
  *       - in: path
@@ -78,7 +78,7 @@ router.get("/:id", validate_jwt_1.validateJWT, cliente_controller_1.getCliente);
  * /cliente/{id}:
  *   delete:
  *     tags:
- *       - Clientes
+ *       - Cliente
  *     summary: Elimina un cliente por su ID
  *     parameters:
  *       - in: path
@@ -99,7 +99,7 @@ router.delete("/:id", validate_jwt_1.validateJWT, cliente_controller_1.eliminarC
  * /cliente/{id}:
  *   put:
  *     tags:
- *       - Clientes
+ *       - Cliente
  *     summary: Actualiza un cliente por su ID
  *     parameters:
  *       - in: path

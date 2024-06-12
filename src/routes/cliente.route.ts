@@ -18,7 +18,7 @@ const router = Router();
  * /cliente:
  *   post:
  *     tags:
- *       - Clientes
+ *       - Cliente
  *     summary: Crea un nuevo cliente
  *     requestBody:
  *       required: true
@@ -43,7 +43,7 @@ router.post("/", validateJWT, crearCliente);
  * /cliente:
  *   get:
  *     tags:
- *       - Clientes
+ *       - Cliente
  *     summary: Obtiene una lista de todos los clientes
  *     responses:
  *       200:
@@ -62,7 +62,7 @@ router.get("/", validateJWT, getClientes);
  * /cliente/{id}:
  *   get:
  *     tags:
- *       - Clientes
+ *       - Cliente
  *     summary: Obtiene un cliente por su ID
  *     parameters:
  *       - in: path
@@ -88,7 +88,7 @@ router.get("/:id", validateJWT, getCliente);
  * /cliente/{id}:
  *   delete:
  *     tags:
- *       - Clientes
+ *       - Cliente
  *     summary: Elimina un cliente por su ID
  *     parameters:
  *       - in: path
@@ -110,7 +110,7 @@ router.delete("/:id", validateJWT, eliminarCliente);
  * /cliente/{id}:
  *   put:
  *     tags:
- *       - Clientes
+ *       - Cliente
  *     summary: Actualiza un cliente por su ID
  *     parameters:
  *       - in: path

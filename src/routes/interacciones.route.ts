@@ -15,10 +15,10 @@ const router = Router();
 
 /**
  * @swagger
- * /interaccione:
+ * /interaccion:
  *   post:
  *     tags:
- *       - Interacciones
+ *       - interaccion
  *     summary: Crea una nueva interacción
  *     requestBody:
  *       required: true
@@ -40,10 +40,10 @@ router.post("/", validateJWT, crearInteraccion);
 
 /**
  * @swagger
- * /interaccione:
+ * /interaccion:
  *   get:
  *     tags:
- *       - Interacciones
+ *       - interaccion
  *     summary: Obtiene una lista de todas las interacciones
  *     responses:
  *       200:
@@ -59,10 +59,10 @@ router.get("/", validateJWT, getInteracciones);
 
 /**
  * @swagger
- * /interaccione/{id}:
+ * /interaccion/{id}:
  *   get:
  *     tags:
- *       - Interacciones
+ *       - interaccion
  *     summary: Obtiene una interacción por su ID
  *     parameters:
  *       - in: path
@@ -85,10 +85,10 @@ router.get("/:id", validateJWT, getInteraccion);
 
 /**
  * @swagger
- * /interaccione/{id}:
+ * /interaccion/{id}:
  *   delete:
  *     tags:
- *       - Interacciones
+ *       - interaccion
  *     summary: Elimina una interacción por su ID
  *     parameters:
  *       - in: path
@@ -107,24 +107,28 @@ router.delete("/:id", validateJWT, eliminarInteraccion);
 
 /**
  * @swagger
- * /interaccione/{id}:
+ * /interaccion/{id}:
  *   put:
  *     tags:
- *       - Interacciones
+ *       - interaccion
  *     summary: Actualiza una interacción por su ID
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
  *         schema:
- *           type: string
- *         description: ID de la interacción
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/Interaccion'
+ *             type: object
+ *             properties:
+ *               cliente:
+ *                 type: string
+ *               llamadas:
+ *                 type: boolean
+ *               correos:
+ *                 type: boolean
+ *               reuniones:
+ *                 type: boolean
+ *              comentarios:
+ *                 type:string
  *     responses:
  *       200:
  *         description: Interacción actualizada
