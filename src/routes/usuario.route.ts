@@ -158,7 +158,7 @@ router.put("/:id",  updateUsuario);
  * /usuario/{id}:
  *   delete:
  *     tags:
- *       - usuarios
+ *       - Usuarios
  *     summary: Elimina un usuario por ID
  *     parameters:
  *       - in: path
