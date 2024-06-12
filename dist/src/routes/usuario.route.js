@@ -12,7 +12,7 @@ const router = (0, express_1.Router)();
  * /usuario:
  *   post:
  *     tags:
- *       - usuarios
+ *       - Usuarios
  *     summary: Crea un nuevo usuario
  *     requestBody:
  *       required: true
@@ -69,7 +69,7 @@ router.post("/", [
  * /usuario:
  *   get:
  *     tags:
- *       - usuarios
+ *       - Usuarios
  *     summary: Obtiene una lista de todos los usuarios
  *     responses:
  *       200:
@@ -87,7 +87,7 @@ router.get("/", usuario_controller_1.getUsuarios);
  * /usuario/{id}:
  *   get:
  *     tags:
- *       - usuarios
+ *       - Usuarios
  *     summary: Obtiene un usuario por ID
  *     parameters:
  *       - in: path
@@ -112,7 +112,7 @@ router.get("/:id", validate_jwt_1.validateJWT, usuario_controller_1.getUnUsuario
  * /usuario/{id}:
  *   put:
  *     tags:
- *       - usuarios
+ *       - Usuarios
  *     summary: Actualiza un usuario por ID
  *     parameters:
  *       - in: path

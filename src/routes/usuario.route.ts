@@ -17,7 +17,7 @@ const router = Router();
  * /usuario:
  *   post:
  *     tags:
- *       - usuarios
+ *       - Usuarios
  *     summary: Crea un nuevo usuario
  *     requestBody:
  *       required: true
@@ -79,7 +79,7 @@ router.post(
  * /usuario:
  *   get:
  *     tags:
- *       - usuarios
+ *       - Usuarios
  *     summary: Obtiene una lista de todos los usuarios
  *     responses:
  *       200:
@@ -98,7 +98,7 @@ router.get("/", getUsuarios);
  * /usuario/{id}:
  *   get:
  *     tags:
- *       - usuarios
+ *       - Usuarios
  *     summary: Obtiene un usuario por ID
  *     parameters:
  *       - in: path
@@ -124,7 +124,7 @@ router.get("/:id", validateJWT, getUnUsuario);
  * /usuario/{id}:
  *   put:
  *     tags:
- *       - usuarios
+ *       - Usuarios
  *     summary: Actualiza un usuario por ID
  *     parameters:
  *       - in: path

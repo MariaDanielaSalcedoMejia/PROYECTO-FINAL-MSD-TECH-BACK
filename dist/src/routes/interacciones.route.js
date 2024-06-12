@@ -9,7 +9,7 @@ const router = (0, express_1.Router)();
  * /interaccion:
  *   post:
  *     tags:
- *       - interaccion
+ *       - Interacciones
  *     summary: Crea una nueva interacción
  *     requestBody:
  *       required: true
@@ -33,7 +33,7 @@ router.post("/", validate_jwt_1.validateJWT, interacciones_controller_1.crearInt
  * /interaccion:
  *   get:
  *     tags:
- *       - interaccion
+ *       - Interacciones
  *     summary: Obtiene una lista de todas las interacciones
  *     responses:
  *       200:
@@ -51,7 +51,7 @@ router.get("/", validate_jwt_1.validateJWT, interacciones_controller_1.getIntera
  * /interaccion/{id}:
  *   get:
  *     tags:
- *       - interaccion
+ *       - Interacciones
  *     summary: Obtiene una interacción por su ID
  *     parameters:
  *       - in: path
@@ -76,7 +76,7 @@ router.get("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.getInt
  * /interaccion/{id}:
  *   delete:
  *     tags:
- *       - interaccion
+ *       - Interacciones
  *     summary: Elimina una interacción por su ID
  *     parameters:
  *       - in: path
@@ -97,7 +97,7 @@ router.delete("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.eli
  * /interaccion/{id}:
  *   put:
  *     tags:
- *       - interaccion
+ *       - Interacciones
  *     summary: Actualiza una interacción por su ID
  *     parameters:
  *       - in: path
