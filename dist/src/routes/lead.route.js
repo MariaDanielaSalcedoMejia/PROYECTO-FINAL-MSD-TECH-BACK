@@ -33,7 +33,7 @@ const router = (0, express_1.Router)();
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Lead'
+ *               $ref: '#/components/schemas/Leads'
  *       400:
  *         description: Error en la solicitud
  */
@@ -43,7 +43,7 @@ router.post("/", validate_jwt_1.validateJWT, lead_controller_1.crearLead);
  * /lead:
  *   get:
  *     tags:
- *       - Lead
+ *       - Leads
  *     summary: Obtiene una lista de todos los leads
  *     responses:
  *       200:
@@ -53,7 +53,7 @@ router.post("/", validate_jwt_1.validateJWT, lead_controller_1.crearLead);
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Lead'
+ *                 $ref: '#/components/schemas/Leads'
  */
 router.get("/", validate_jwt_1.validateJWT, lead_controller_1.getLeads);
 /**
@@ -61,7 +61,7 @@ router.get("/", validate_jwt_1.validateJWT, lead_controller_1.getLeads);
  * /lead/{id}:
  *   get:
  *     tags:
- *       - Lead
+ *       - Leads
  *     summary: Obtiene un lead por ID
  *     parameters:
  *       - in: path
@@ -76,7 +76,7 @@ router.get("/", validate_jwt_1.validateJWT, lead_controller_1.getLeads);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Lead'
+ *               $ref: '#/components/schemas/Leads'
  *       404:
  *         description: Lead no encontrado
  */
@@ -86,7 +86,7 @@ router.get("/:id", validate_jwt_1.validateJWT, lead_controller_1.getLead);
  * /lead/{id}:
  *   delete:
  *     tags:
- *       - Lead
+ *       - Leads
  *     summary: Elimina un lead por ID
  *     parameters:
  *       - in: path
@@ -107,7 +107,7 @@ router.delete("/:id", validate_jwt_1.validateJWT, lead_controller_1.eliminarLead
  * /lead/{id}:
  *   put:
  *     tags:
- *       - Lead
+ *       - Leads
  *     summary: Actualiza un lead por ID
  *     parameters:
  *       - in: path
@@ -121,14 +121,14 @@ router.delete("/:id", validate_jwt_1.validateJWT, lead_controller_1.eliminarLead
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Lead'
+ *             $ref: '#/components/schemas/Leads'
  *     responses:
  *       200:
  *         description: Lead actualizado
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Lead'
+ *               $ref: '#/components/schemas/Leads'
  *       400:
  *         description: Error en la solicitud
  *       404:

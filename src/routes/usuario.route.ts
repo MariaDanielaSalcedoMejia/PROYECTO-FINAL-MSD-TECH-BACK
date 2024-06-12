@@ -89,7 +89,7 @@ router.post(
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/User'
+ *                 $ref: '#/components/schemas/usuarios'
  */
 router.get("/", getUsuarios);
 
@@ -98,7 +98,7 @@ router.get("/", getUsuarios);
  * /usuario/{id}:
  *   get:
  *     tags:
- *       - usuario
+ *       - usuarios
  *     summary: Obtiene un usuario por ID
  *     parameters:
  *       - in: path
@@ -113,7 +113,7 @@ router.get("/", getUsuarios);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/usuarios'
  *       404:
  *         description: Usuario no encontrado
  */
@@ -124,7 +124,7 @@ router.get("/:id", validateJWT, getUnUsuario);
  * /usuario/{id}:
  *   put:
  *     tags:
- *       - usuario
+ *       - usuarios
  *     summary: Actualiza un usuario por ID
  *     parameters:
  *       - in: path
@@ -138,14 +138,14 @@ router.get("/:id", validateJWT, getUnUsuario);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/User'
+ *             $ref: '#/components/schemas/usuarios'
  *     responses:
  *       200:
  *         description: Usuario actualizado
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/usuarios'
  *       400:
  *         description: Error en la solicitud
  *       404:
@@ -158,7 +158,7 @@ router.put("/:id", validateJWT, updateUsuario);
  * /usuario/{id}:
  *   delete:
  *     tags:
- *       - usuario
+ *       - usuarios
  *     summary: Elimina un usuario por ID
  *     parameters:
  *       - in: path

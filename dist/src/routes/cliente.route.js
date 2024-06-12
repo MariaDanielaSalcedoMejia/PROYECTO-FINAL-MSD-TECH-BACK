@@ -25,7 +25,7 @@ const router = (0, express_1.Router)();
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Cliente'
+ *               $ref: '#/components/schemas/Clientes'
  *       400:
  *         description: Error en la solicitud
  */
@@ -45,7 +45,7 @@ router.post("/", validate_jwt_1.validateJWT, cliente_controller_1.crearCliente);
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Cliente'
+ *                 $ref: '#/components/schemas/Clientes'
  */
 router.get("/", validate_jwt_1.validateJWT, cliente_controller_1.getClientes);
 /**
@@ -68,7 +68,7 @@ router.get("/", validate_jwt_1.validateJWT, cliente_controller_1.getClientes);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Cliente'
+ *               $ref: '#/components/schemas/Clientes'
  *       404:
  *         description: Cliente no encontrado
  */
@@ -99,7 +99,7 @@ router.delete("/:id", validate_jwt_1.validateJWT, cliente_controller_1.eliminarC
  * /cliente/{id}:
  *   put:
  *     tags:
- *       - Cliente
+ *       - Clientes
  *     summary: Actualiza un cliente por su ID
  *     parameters:
  *       - in: path
@@ -113,14 +113,14 @@ router.delete("/:id", validate_jwt_1.validateJWT, cliente_controller_1.eliminarC
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Cliente'
+ *             $ref: '#/components/schemas/Clientes'
  *     responses:
  *       200:
  *         description: Cliente actualizado
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Cliente'
+ *               $ref: '#/components/schemas/Clientes'
  *       400:
  *         description: Error en la solicitud
  *       404:

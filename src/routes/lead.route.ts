@@ -40,7 +40,7 @@ const router = Router();
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Lead'
+ *               $ref: '#/components/schemas/Leads'
  *       400:
  *         description: Error en la solicitud
  */
@@ -51,7 +51,7 @@ router.post("/", validateJWT, crearLead);
  * /lead:
  *   get:
  *     tags:
- *       - Lead
+ *       - Leads
  *     summary: Obtiene una lista de todos los leads 
  *     responses:
  *       200:
@@ -61,7 +61,7 @@ router.post("/", validateJWT, crearLead);
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Lead'
+ *                 $ref: '#/components/schemas/Leads'
  */
 router.get("/", validateJWT, getLeads);
 
@@ -70,7 +70,7 @@ router.get("/", validateJWT, getLeads);
  * /lead/{id}:
  *   get:
  *     tags:
- *       - Lead
+ *       - Leads
  *     summary: Obtiene un lead por ID 
  *     parameters:
  *       - in: path
@@ -85,7 +85,7 @@ router.get("/", validateJWT, getLeads);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Lead'
+ *               $ref: '#/components/schemas/Leads'
  *       404:
  *         description: Lead no encontrado
  */
@@ -96,7 +96,7 @@ router.get("/:id", validateJWT, getLead);
  * /lead/{id}:
  *   delete:
  *     tags:
- *       - Lead
+ *       - Leads
  *     summary: Elimina un lead por ID 
  *     parameters:
  *       - in: path
@@ -118,7 +118,7 @@ router.delete("/:id", validateJWT, eliminarLead);
  * /lead/{id}:
  *   put:
  *     tags:
- *       - Lead
+ *       - Leads
  *     summary: Actualiza un lead por ID 
  *     parameters:
  *       - in: path
@@ -132,14 +132,14 @@ router.delete("/:id", validateJWT, eliminarLead);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Lead'
+ *             $ref: '#/components/schemas/Leads'
  *     responses:
  *       200:
  *         description: Lead actualizado
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Lead'
+ *               $ref: '#/components/schemas/Leads'
  *       400:
  *         description: Error en la solicitud
  *       404:

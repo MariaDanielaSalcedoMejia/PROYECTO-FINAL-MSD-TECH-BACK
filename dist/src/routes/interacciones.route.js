@@ -23,7 +23,7 @@ const router = (0, express_1.Router)();
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Interaccion'
+ *               $ref: '#/components/schemas/Interacciones'
  *       400:
  *         description: Error en la solicitud
  */
@@ -43,7 +43,7 @@ router.post("/", validate_jwt_1.validateJWT, interacciones_controller_1.crearInt
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Interaccion'
+ *                 $ref: '#/components/schemas/Interacciones'
  */
 router.get("/", validate_jwt_1.validateJWT, interacciones_controller_1.getInteracciones);
 /**
@@ -66,7 +66,7 @@ router.get("/", validate_jwt_1.validateJWT, interacciones_controller_1.getIntera
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Interaccion'
+ *               $ref: '#/components/schemas/Interacciones'
  *       404:
  *         description: Interacción no encontrada
  */
@@ -97,7 +97,7 @@ router.delete("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.eli
  * /interaccion/{id}:
  *   put:
  *     tags:
- *       - interaccion
+ *       - interacciones
  *     summary: Actualiza una interacción por su ID
  *     parameters:
  *       - in: path
@@ -128,7 +128,7 @@ router.delete("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.eli
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Interaccion'
+ *               $ref: '#/components/schemas/Interacciones'
  *       400:
  *         description: Error en la solicitud
  *       404:

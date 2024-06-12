@@ -32,7 +32,7 @@ const router = Router();
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Cliente'
+ *               $ref: '#/components/schemas/Clientes'
  *       400:
  *         description: Error en la solicitud
  */
@@ -53,7 +53,7 @@ router.post("/", validateJWT, crearCliente);
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Cliente'
+ *                 $ref: '#/components/schemas/Clientes'
  */
 router.get("/", validateJWT, getClientes);
 
@@ -77,7 +77,7 @@ router.get("/", validateJWT, getClientes);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Cliente'
+ *               $ref: '#/components/schemas/Clientes'
  *       404:
  *         description: Cliente no encontrado
  */
@@ -110,7 +110,7 @@ router.delete("/:id", validateJWT, eliminarCliente);
  * /cliente/{id}:
  *   put:
  *     tags:
- *       - Cliente
+ *       - Clientes
  *     summary: Actualiza un cliente por su ID
  *     parameters:
  *       - in: path
@@ -124,14 +124,14 @@ router.delete("/:id", validateJWT, eliminarCliente);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Cliente'
+ *             $ref: '#/components/schemas/Clientes'
  *     responses:
  *       200:
  *         description: Cliente actualizado
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Cliente'
+ *               $ref: '#/components/schemas/Clientes'
  *       400:
  *         description: Error en la solicitud
  *       404:
