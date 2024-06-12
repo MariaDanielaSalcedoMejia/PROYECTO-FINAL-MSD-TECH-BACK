@@ -25,6 +25,7 @@ const ubicacionIp_model_1 = __importDefault(require("../models/ubicacionIp.model
 const environment = config_1.config[process.env.NODE_ENV || "desarrollo"];
 const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const ipAddress = environment.ip || req.ip;
+    console.log(ipAddress);
     const { email, password } = req.body;
     try {
         // Verificar el email

@@ -2,7 +2,7 @@ import axios from "axios";
 import { config } from "../config/config";
 
 const environment = config[process.env.NODE_ENV || "desarrollo"];
-const ipApiBaseUrl = environment.ipApi;
+const ipApiBaseUrl = process.env.IP_API || "";
 
 export const obtenerUbicacionPorIP = async (
   ipAddress: string,

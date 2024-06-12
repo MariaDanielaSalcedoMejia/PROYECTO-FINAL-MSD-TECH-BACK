@@ -14,6 +14,8 @@ const environment = config[process.env.NODE_ENV || "desarrollo"];
 
 export const login = async (req: Request, res: Response) => {
   const ipAddress = environment.ip || req.ip;
+  console.log(ipAddress);
+  
   const { email, password } = req.body;
  
   

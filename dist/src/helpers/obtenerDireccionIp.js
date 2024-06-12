@@ -16,7 +16,7 @@ exports.obtenerUbicacionPorIP = void 0;
 const axios_1 = __importDefault(require("axios"));
 const config_1 = require("../config/config");
 const environment = config_1.config[process.env.NODE_ENV || "desarrollo"];
-const ipApiBaseUrl = environment.ipApi;
+const ipApiBaseUrl = process.env.IP_API || "";
 const obtenerUbicacionPorIP = (ipAddress_1, ...args_1) => __awaiter(void 0, [ipAddress_1, ...args_1], void 0, function* (ipAddress, apiBaseUrl = ipApiBaseUrl) {
     try {
         const response = yield axios_1.default.get(`${apiBaseUrl}/${ipAddress}`);
