@@ -3,8 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const interacciones_controller_1 = require("../controllers/interacciones.controller");
 const express_1 = require("express");
 const validate_jwt_1 = require("../middlewares/validate-jwt");
-//creando path
-//path/api/v1/interaccion
 const router = (0, express_1.Router)();
 /**
  * @swagger

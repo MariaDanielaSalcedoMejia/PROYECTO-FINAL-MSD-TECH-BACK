@@ -10,7 +10,7 @@ import { check } from "express-validator";
 import { validateFields } from "../middlewares/validate-fields";
 import { validateJWT } from "../middlewares/validate-jwt";
 
-//path /api/v1/usuario
+
 
 const router = Router();
 /**
@@ -25,7 +25,7 @@ const router = Router();
  *       content:
  *         application/json:
  *           schema:
- *             
+ *             type: object
  *             properties:
  *               nombre:
  *                 type: string

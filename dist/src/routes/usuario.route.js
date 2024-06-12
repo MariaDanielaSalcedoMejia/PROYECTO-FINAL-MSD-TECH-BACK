@@ -6,7 +6,6 @@ const usuario_controller_2 = require("../controllers/usuario.controller");
 const express_validator_1 = require("express-validator");
 const validate_fields_1 = require("../middlewares/validate-fields");
 const validate_jwt_1 = require("../middlewares/validate-jwt");
-//path /api/v1/usuario
 const router = (0, express_1.Router)();
 /**
  * @swagger
@@ -20,7 +19,7 @@ const router = (0, express_1.Router)();
  *       content:
  *         application/json:
  *           schema:
- *
+ *             type: object
  *             properties:
  *               nombre:
  *                 type: string

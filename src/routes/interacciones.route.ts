@@ -8,8 +8,7 @@ import {
 import { Router } from "express";
 import { validateJWT } from "../middlewares/validate-jwt";
 
-//creando path
-//path/api/v1/interaccion
+
 
 const router = Router();
 
