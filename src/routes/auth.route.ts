@@ -16,7 +16,7 @@ const router = Router();
  * /auth:
  *   post:
  *     tags:
- *       - Auth
+ *       - Login
  *     summary: Iniciar sesión
  *     requestBody:
  *       required: true

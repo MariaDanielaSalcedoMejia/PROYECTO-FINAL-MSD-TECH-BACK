@@ -11,7 +11,7 @@ const router = (0, express_1.Router)();
  * /auth:
  *   post:
  *     tags:
- *       - Auth
+ *       - Login
  *     summary: Iniciar sesión
  *     requestBody:
  *       required: true
