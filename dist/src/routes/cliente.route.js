@@ -11,21 +11,21 @@ const router = (0, express_1.Router)();
  * /cliente:
  *   post:
  *     tags:
- *       - Cliente
+ *       - Clientes
  *     summary: Crea un nuevo cliente
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Cliente'
+ *             $ref: '#/components/schemas/clientes'
  *     responses:
  *       200:
  *         description: Cliente creado exitosamente
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Clientes'
+ *               $ref: '#/components/schemas/clientes'
  *       400:
  *         description: Error en la solicitud
  */
@@ -35,7 +35,7 @@ router.post("/", validate_jwt_1.validateJWT, cliente_controller_1.crearCliente);
  * /cliente:
  *   get:
  *     tags:
- *       - Cliente
+ *       - Clientes
  *     summary: Obtiene una lista de todos los clientes
  *     responses:
  *       200:
@@ -45,7 +45,7 @@ router.post("/", validate_jwt_1.validateJWT, cliente_controller_1.crearCliente);
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Clientes'
+ *                 $ref: '#/components/schemas/clientes'
  */
 router.get("/", validate_jwt_1.validateJWT, cliente_controller_1.getClientes);
 /**
@@ -53,7 +53,7 @@ router.get("/", validate_jwt_1.validateJWT, cliente_controller_1.getClientes);
  * /cliente/{id}:
  *   get:
  *     tags:
- *       - Cliente
+ *       - Clientes
  *     summary: Obtiene un cliente por su ID
  *     parameters:
  *       - in: path
@@ -68,7 +68,7 @@ router.get("/", validate_jwt_1.validateJWT, cliente_controller_1.getClientes);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Clientes'
+ *               $ref: '#/components/schemas/clientes'
  *       404:
  *         description: Cliente no encontrado
  */
@@ -78,7 +78,7 @@ router.get("/:id", validate_jwt_1.validateJWT, cliente_controller_1.getCliente);
  * /cliente/{id}:
  *   delete:
  *     tags:
- *       - Cliente
+ *       - Clientes
  *     summary: Elimina un cliente por su ID
  *     parameters:
  *       - in: path
@@ -113,14 +113,14 @@ router.delete("/:id", validate_jwt_1.validateJWT, cliente_controller_1.eliminarC
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Clientes'
+ *             $ref: '#/components/schemas/clientes'
  *     responses:
  *       200:
  *         description: Cliente actualizado
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Clientes'
+ *               $ref: '#/components/schemas/clientes'
  *       400:
  *         description: Error en la solicitud
  *       404:

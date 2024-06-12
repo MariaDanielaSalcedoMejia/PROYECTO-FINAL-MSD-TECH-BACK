@@ -33,7 +33,7 @@ const router = (0, express_1.Router)();
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Leads'
+ *               $ref: '#/components/schemas/leads'
  *       400:
  *         description: Error en la solicitud
  */
@@ -53,7 +53,7 @@ router.post("/", validate_jwt_1.validateJWT, lead_controller_1.crearLead);
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Leads'
+ *                 $ref: '#/components/schemas/leads'
  */
 router.get("/", validate_jwt_1.validateJWT, lead_controller_1.getLeads);
 /**
@@ -76,7 +76,7 @@ router.get("/", validate_jwt_1.validateJWT, lead_controller_1.getLeads);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Leads'
+ *               $ref: '#/components/schemas/leads'
  *       404:
  *         description: Lead no encontrado
  */
@@ -121,14 +121,14 @@ router.delete("/:id", validate_jwt_1.validateJWT, lead_controller_1.eliminarLead
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Leads'
+ *             $ref: '#/components/schemas/leads'
  *     responses:
  *       200:
  *         description: Lead actualizado
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Leads'
+ *               $ref: '#/components/schemas/leads'
  *       400:
  *         description: Error en la solicitud
  *       404:

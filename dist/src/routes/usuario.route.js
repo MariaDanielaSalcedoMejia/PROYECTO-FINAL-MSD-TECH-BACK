@@ -12,7 +12,7 @@ const router = (0, express_1.Router)();
  * /usuario:
  *   post:
  *     tags:
- *       - usuario
+ *       - usuarios
  *     summary: Crea un nuevo usuario
  *     requestBody:
  *       required: true
@@ -69,7 +69,7 @@ router.post("/", [
  * /usuario:
  *   get:
  *     tags:
- *       - usuario
+ *       - usuarios
  *     summary: Obtiene una lista de todos los usuarios
  *     responses:
  *       200:

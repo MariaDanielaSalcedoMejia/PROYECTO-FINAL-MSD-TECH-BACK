@@ -40,7 +40,7 @@ const router = Router();
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Leads'
+ *               $ref: '#/components/schemas/leads'
  *       400:
  *         description: Error en la solicitud
  */
@@ -61,7 +61,7 @@ router.post("/", validateJWT, crearLead);
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Leads'
+ *                 $ref: '#/components/schemas/leads'
  */
 router.get("/", validateJWT, getLeads);
 
@@ -85,7 +85,7 @@ router.get("/", validateJWT, getLeads);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Leads'
+ *               $ref: '#/components/schemas/leads'
  *       404:
  *         description: Lead no encontrado
  */
@@ -132,14 +132,14 @@ router.delete("/:id", validateJWT, eliminarLead);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Leads'
+ *             $ref: '#/components/schemas/leads'
  *     responses:
  *       200:
  *         description: Lead actualizado
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Leads'
+ *               $ref: '#/components/schemas/leads'
  *       400:
  *         description: Error en la solicitud
  *       404:

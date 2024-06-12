@@ -22,14 +22,14 @@ const router = Router();
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Interaccion'
+ *             $ref: '#/components/schemas/interacciones'
  *     responses:
  *       200:
  *         description: Interacción creada exitosamente
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Interacciones'
+ *               $ref: '#/components/schemas/interacciones'
  *       400:
  *         description: Error en la solicitud
  */
@@ -50,7 +50,7 @@ router.post("/", validateJWT, crearInteraccion);
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Interacciones'
+ *                 $ref: '#/components/schemas/interacciones'
  */
 router.get("/", validateJWT, getInteracciones);
 
@@ -74,7 +74,7 @@ router.get("/", validateJWT, getInteracciones);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Interacciones'
+ *               $ref: '#/components/schemas/interacciones'
  *       404:
  *         description: Interacción no encontrada
  */
@@ -107,7 +107,7 @@ router.delete("/:id", validateJWT, eliminarInteraccion);
  * /interaccion/{id}:
  *   put:
  *     tags:
- *       - interacciones
+ *       - interaccion
  *     summary: Actualiza una interacción por su ID
  *     parameters:
  *       - in: path
@@ -138,7 +138,7 @@ router.delete("/:id", validateJWT, eliminarInteraccion);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Interacciones'
+ *               $ref: '#/components/schemas/interacciones'
  *       400:
  *         description: Error en la solicitud
  *       404:
