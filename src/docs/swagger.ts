@@ -120,23 +120,23 @@ const swaggerDefinition: OAS3Definition = {
   security: [{ bearerAuth: [] }],
   tags: [
     {
-      name: "Usuarios",
+      name: "usuarios",
       description: "Operaciones relacionadas con los usuarios",
     },
     {
-      name: "Clientes",
+      name: "clientes",
       description: "Operaciones relacionadas con los clientes",
     },
     {
-      name: "Interacciones",
+      name: "interacciones",
       description: "Operaciones relacionadas con las interacciones",
     },
     {
-      name: "Leads",
+      name: "leads",
       description: "Operaciones relacionadas con los leads",
     },
     {
-      name: "Auth",
+      name: "Login",
       description: "Operaciones relacionadas con la autenticación",
     },
   ],
