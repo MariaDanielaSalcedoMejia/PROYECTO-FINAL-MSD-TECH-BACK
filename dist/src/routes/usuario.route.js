@@ -14,36 +14,35 @@ const router = (0, express_1.Router)();
  *     tags:
  *       - usuario
  *     summary: Crea un nuevo usuario
- *    requestBody:
-  required: true
-  content:
-    application/json:
-      schema:
-        type: object
-        properties:
-          nombre:
-            type: string
-          email:
-            type: string
-            format: email
-          tipoDocumento:
-            type: string
-          numeroDocumento:
-            type: string
-          numeroCelular:
-            type: number
-          password:
-            type: string
-          rol:
-            type: string
-*             required:
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nombre:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *                 format: email
+ *               tipoDocumento:
+ *                 type: string
+ *               numeroDocumento:
+ *                 type: string
+ *               numeroCelular:
+ *                 type: number
+ *               password:
+ *                 type: string
+ *               rol:
+ *                 type: string
+ *             required:
  *               - nombre
  *               - numeroDocumento
  *               - email
  *               - numeroCelular
  *               - password
  *               - tipoDocumento
- *
  *     responses:
  *       200:
  *         description: Usuario creado exitosamente
