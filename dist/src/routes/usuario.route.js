@@ -20,7 +20,7 @@ const router = (0, express_1.Router)();
  *       content:
  *         application/json:
  *           schema:
- *             type: object
+ *
  *             properties:
  *               nombre:
  *                 type: string

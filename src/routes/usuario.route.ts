@@ -25,7 +25,7 @@ const router = Router();
  *       content:
  *         application/json:
  *           schema:
- *             type: object
+ *             
  *             properties:
  *               nombre:
  *                 type: string
