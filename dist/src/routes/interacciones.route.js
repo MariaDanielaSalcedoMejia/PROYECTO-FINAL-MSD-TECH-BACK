@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const interacciones_controller_1 = require("../controllers/interacciones.controller");
 const express_1 = require("express");
 const validate_jwt_1 = require("../middlewares/validate-jwt");
+const interacciones_controller_1 = require("../controllers/interacciones.controller");
 const router = (0, express_1.Router)();
 /**
  * @swagger
@@ -104,6 +104,12 @@ router.delete("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.eli
  *         name: id
  *         required: true
  *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
  *             type: object
  *             properties:
  *               cliente:
@@ -114,8 +120,8 @@ router.delete("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.eli
  *                 type: boolean
  *               reuniones:
  *                 type: boolean
- *              comentarios:
- *                 type:string
+ *               comentarios:
+ *                 type: string
  *     responses:
  *       200:
  *         description: Interacción actualizada

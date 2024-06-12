@@ -1,3 +1,5 @@
+import { Router } from "express";
+import { validateJWT } from "../middlewares/validate-jwt";
 import {
   crearInteraccion,
   eliminarInteraccion,
@@ -5,10 +7,6 @@ import {
   getInteracciones,
   updateInteraccion,
 } from "../controllers/interacciones.controller";
-import { Router } from "express";
-import { validateJWT } from "../middlewares/validate-jwt";
-
-
 
 const router = Router();
 
@@ -116,6 +114,12 @@ router.delete("/:id", validateJWT, eliminarInteraccion);
  *         name: id
  *         required: true
  *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
  *             type: object
  *             properties:
  *               cliente:
@@ -126,8 +130,8 @@ router.delete("/:id", validateJWT, eliminarInteraccion);
  *                 type: boolean
  *               reuniones:
  *                 type: boolean
- *              comentarios:
- *                 type:string
+ *               comentarios:
+ *                 type: string
  *     responses:
  *       200:
  *         description: Interacción actualizada
