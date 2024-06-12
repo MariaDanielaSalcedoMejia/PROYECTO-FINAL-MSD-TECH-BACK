@@ -8,13 +8,11 @@ const validate_jwt_1 = require("../middlewares/validate-jwt");
 const router = (0, express_1.Router)();
 /**
  * @swagger
- * /interacciones:
+ * /interaccione:
  *   post:
  *     tags:
  *       - Interacciones
  *     summary: Crea una nueva interacción
- *     security:
- *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -34,13 +32,11 @@ const router = (0, express_1.Router)();
 router.post("/", validate_jwt_1.validateJWT, interacciones_controller_1.crearInteraccion);
 /**
  * @swagger
- * /interacciones:
+ * /interaccione:
  *   get:
  *     tags:
  *       - Interacciones
  *     summary: Obtiene una lista de todas las interacciones
- *     security:
- *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Lista de interacciones
@@ -54,13 +50,11 @@ router.post("/", validate_jwt_1.validateJWT, interacciones_controller_1.crearInt
 router.get("/", validate_jwt_1.validateJWT, interacciones_controller_1.getInteracciones);
 /**
  * @swagger
- * /interacciones/{id}:
+ * /interaccione/{id}:
  *   get:
  *     tags:
  *       - Interacciones
  *     summary: Obtiene una interacción por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -81,13 +75,11 @@ router.get("/", validate_jwt_1.validateJWT, interacciones_controller_1.getIntera
 router.get("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.getInteraccion);
 /**
  * @swagger
- * /interacciones/{id}:
+ * /interaccione/{id}:
  *   delete:
  *     tags:
  *       - Interacciones
  *     summary: Elimina una interacción por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -104,13 +96,11 @@ router.get("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.getInt
 router.delete("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.eliminarInteraccion);
 /**
  * @swagger
- * /interacciones/{id}:
+ * /interaccione/{id}:
  *   put:
  *     tags:
  *       - Interacciones
  *     summary: Actualiza una interacción por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id

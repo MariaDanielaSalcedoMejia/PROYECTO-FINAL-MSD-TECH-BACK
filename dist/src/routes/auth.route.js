@@ -107,8 +107,6 @@ router.put("/cambiocontrasena", [
  *     tags:
  *       - Auth
  *     summary: Renovar token
- *     security:
- *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Token renovado correctamente

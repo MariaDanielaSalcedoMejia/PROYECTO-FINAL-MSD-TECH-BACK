@@ -8,13 +8,11 @@ const validate_jwt_1 = require("../middlewares/validate-jwt");
 const router = (0, express_1.Router)();
 /**
  * @swagger
- * /clientes:
+ * /cliente:
  *   post:
  *     tags:
  *       - Clientes
  *     summary: Crea un nuevo cliente
- *     security:
- *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -34,13 +32,11 @@ const router = (0, express_1.Router)();
 router.post("/", validate_jwt_1.validateJWT, cliente_controller_1.crearCliente);
 /**
  * @swagger
- * /clientes:
+ * /cliente:
  *   get:
  *     tags:
  *       - Clientes
  *     summary: Obtiene una lista de todos los clientes
- *     security:
- *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Lista de clientes
@@ -54,13 +50,11 @@ router.post("/", validate_jwt_1.validateJWT, cliente_controller_1.crearCliente);
 router.get("/", validate_jwt_1.validateJWT, cliente_controller_1.getClientes);
 /**
  * @swagger
- * /clientes/{id}:
+ * /cliente/{id}:
  *   get:
  *     tags:
  *       - Clientes
  *     summary: Obtiene un cliente por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -81,13 +75,11 @@ router.get("/", validate_jwt_1.validateJWT, cliente_controller_1.getClientes);
 router.get("/:id", validate_jwt_1.validateJWT, cliente_controller_1.getCliente);
 /**
  * @swagger
- * /clientes/{id}:
+ * /cliente/{id}:
  *   delete:
  *     tags:
  *       - Clientes
  *     summary: Elimina un cliente por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -104,13 +96,11 @@ router.get("/:id", validate_jwt_1.validateJWT, cliente_controller_1.getCliente);
 router.delete("/:id", validate_jwt_1.validateJWT, cliente_controller_1.eliminarCliente);
 /**
  * @swagger
- * /clientes/{id}:
+ * /cliente/{id}:
  *   put:
  *     tags:
  *       - Clientes
  *     summary: Actualiza un cliente por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id

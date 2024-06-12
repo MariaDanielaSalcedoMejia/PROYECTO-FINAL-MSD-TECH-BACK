@@ -8,13 +8,11 @@ const express_1 = require("express");
 const router = (0, express_1.Router)();
 /**
  * @swagger
- * /leads:
+ * /lead:
  *   post:
  *     tags:
  *       - Leads
  *     summary: Crea un nuevo lead
- *     security:
- *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -34,13 +32,11 @@ const router = (0, express_1.Router)();
 router.post("/", validate_jwt_1.validateJWT, lead_controller_1.crearLead);
 /**
  * @swagger
- * /leads:
+ * /lead:
  *   get:
  *     tags:
  *       - Leads
  *     summary: Obtiene una lista de todos los leads
- *     security:
- *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Lista de leads
@@ -54,13 +50,11 @@ router.post("/", validate_jwt_1.validateJWT, lead_controller_1.crearLead);
 router.get("/", validate_jwt_1.validateJWT, lead_controller_1.getLeads);
 /**
  * @swagger
- * /leads/{id}:
+ * /lead/{id}:
  *   get:
  *     tags:
  *       - Leads
  *     summary: Obtiene un lead por ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -81,13 +75,11 @@ router.get("/", validate_jwt_1.validateJWT, lead_controller_1.getLeads);
 router.get("/:id", validate_jwt_1.validateJWT, lead_controller_1.getLead);
 /**
  * @swagger
- * /leads/{id}:
+ * /lead/{id}:
  *   delete:
  *     tags:
  *       - Leads
  *     summary: Elimina un lead por ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -104,13 +96,11 @@ router.get("/:id", validate_jwt_1.validateJWT, lead_controller_1.getLead);
 router.delete("/:id", validate_jwt_1.validateJWT, lead_controller_1.eliminarLead);
 /**
  * @swagger
- * /leads/{id}:
+ * /lead/{id}:
  *   put:
  *     tags:
  *       - Leads
  *     summary: Actualiza un lead por ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id

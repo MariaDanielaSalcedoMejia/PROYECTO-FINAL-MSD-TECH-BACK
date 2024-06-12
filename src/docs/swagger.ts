@@ -3,12 +3,13 @@ import swaggerJSDoc, { OAS3Definition, OAS3Options } from "swagger-jsdoc";
 const swaggerDefinition: OAS3Definition = {
   openapi: "3.0.0",
   info: {
-    title: "Documentacion de mi API",
+    title: "Documentacion de MDS TECHNOLOGY",
     version: "1.0.0",
   },
   servers: [
     {
       url: "https://proyecto-final-msd-tech-back.onrender.com/api/v1",
+      // url: "http://localhost:2000/documentation/api/v1",
     },
   ],
   components: {
@@ -19,16 +20,33 @@ const swaggerDefinition: OAS3Definition = {
       },
     },
     schemas: {
-      User: {
-        // Asegúrate de que este esquema está definido correctamente
+      usuarios: {
         type: "object",
-        required: ["tipoDocumento", "numeroDocumento", "password", "rol"],
+        required: [
+          "tipoDocumento",
+          "numeroDocumento",
+          "password",
+          "rol",
+          "password",
+        ],
         properties: {
+          nombre: {
+            type: "string",
+          },
+          email: {
+            type: "string",
+            description: "El email del usuario, debe ser único.",
+          },
           tipoDocumento: {
             type: "string",
           },
           numeroDocumento: {
             type: "number",
+            description: "El numeroDocumento del usuario, debe ser único.",
+          },
+          numeroCelular: {
+            type: "number",
+            
           },
           password: {
             type: "string",
@@ -39,16 +57,9 @@ const swaggerDefinition: OAS3Definition = {
             description:
               "El rol del usuario, que puede ser uno de los valores especificados.",
           },
-          nombre: {
-            type: "string",
-          },
-          email: {
-            type: "string",
-            description: "El email del usuario, debe ser único.",
-          },
         },
       },
-      Cliente: {
+      clientes: {
         type: "object",
         required: ["nombre", "email"],
         properties: {
@@ -59,44 +70,54 @@ const swaggerDefinition: OAS3Definition = {
             type: "string",
             description: "El email del cliente, debe ser único.",
           },
-          telefono: {
+          numeroCelular: {
+            type: "string",
+          },
+          direccion: {
             type: "string",
           },
         },
       },
-      Interaccion: {
+      interacciones: {
         type: "object",
-        required: ["cliente", "descripcion"],
+        required: ["cliente"],
         properties: {
-          tipo: {
+          cliente: {
             type: "string",
           },
-          descripcion: {
-            type: "string",
+          llamadas: {
+            type: "boolean",
           },
-          descripciones: {
-            type: "string",
+          correos: {
+            type: "boolean",
           },
+          reuniones: {
+            type: "boolean",
+          },
+          comentarios: { type: "string" },
         },
       },
-      Lead: {
+      leads: {
         type: "object",
-        required: ["nombre", "email"],
+        required: ["cliente", "email"],
         properties: {
-          nombre: {
+          cliente: {
             type: "string",
           },
-          email: {
+          descripccion: {
             type: "string",
-            description: "El email del lead, debe ser único.",
+            description: "Ingresar una breve descripcion del lead.",
           },
-          telefono: {
-            type: "string",
+          estado: {
+            type: "boolean",
+            description:
+              "Define si el lead esta activo (true) o inactivo (false)",
           },
         },
       },
     },
   },
+  security: [{ bearerAuth: [] }],
   tags: [
     {
       name: "Usuarios",
@@ -124,6 +145,11 @@ const swaggerDefinition: OAS3Definition = {
 const swaggerOptions: OAS3Options = {
   swaggerDefinition,
   apis: ["./src/routes/*.ts"],
+  security: [
+    {
+      Bearer: [],
+    },
+  ],
 };
 
 export default swaggerJSDoc(swaggerOptions);

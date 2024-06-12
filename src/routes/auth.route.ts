@@ -127,8 +127,6 @@ router.put(
  *     tags:
  *       - Auth
  *     summary: Renovar token
- *     security:
- *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Token renovado correctamente

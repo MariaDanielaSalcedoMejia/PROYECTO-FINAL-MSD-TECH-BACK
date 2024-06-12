@@ -15,13 +15,11 @@ const router = Router();
 
 /**
  * @swagger
- * /leads:
+ * /lead:
  *   post:
  *     tags:
  *       - Leads
  *     summary: Crea un nuevo lead
- *     security:
- *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -42,13 +40,11 @@ router.post("/", validateJWT, crearLead);
 
 /**
  * @swagger
- * /leads:
+ * /lead:
  *   get:
  *     tags:
  *       - Leads
- *     summary: Obtiene una lista de todos los leads
- *     security:
- *       - bearerAuth: []
+ *     summary: Obtiene una lista de todos los leads 
  *     responses:
  *       200:
  *         description: Lista de leads
@@ -63,13 +59,11 @@ router.get("/", validateJWT, getLeads);
 
 /**
  * @swagger
- * /leads/{id}:
+ * /lead/{id}:
  *   get:
  *     tags:
  *       - Leads
- *     summary: Obtiene un lead por ID
- *     security:
- *       - bearerAuth: []
+ *     summary: Obtiene un lead por ID 
  *     parameters:
  *       - in: path
  *         name: id
@@ -91,13 +85,11 @@ router.get("/:id", validateJWT, getLead);
 
 /**
  * @swagger
- * /leads/{id}:
+ * /lead/{id}:
  *   delete:
  *     tags:
  *       - Leads
- *     summary: Elimina un lead por ID
- *     security:
- *       - bearerAuth: []
+ *     summary: Elimina un lead por ID 
  *     parameters:
  *       - in: path
  *         name: id
@@ -115,13 +107,11 @@ router.delete("/:id", validateJWT, eliminarLead);
 
 /**
  * @swagger
- * /leads/{id}:
+ * /lead/{id}:
  *   put:
  *     tags:
  *       - Leads
- *     summary: Actualiza un lead por ID
- *     security:
- *       - bearerAuth: []
+ *     summary: Actualiza un lead por ID 
  *     parameters:
  *       - in: path
  *         name: id

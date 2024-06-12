@@ -64,8 +64,6 @@ router.post("/", [
  *     tags:
  *       - Usuarios
  *     summary: Obtiene una lista de todos los usuarios
- *     security:
- *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Lista de usuarios
@@ -76,7 +74,7 @@ router.post("/", [
  *               items:
  *                 $ref: '#/components/schemas/User'
  */
-router.get("/", validate_jwt_1.validateJWT, usuario_controller_1.getUsuarios);
+router.get("/", usuario_controller_1.getUsuarios);
 /**
  * @swagger
  * /usuario/{id}:
@@ -84,8 +82,6 @@ router.get("/", validate_jwt_1.validateJWT, usuario_controller_1.getUsuarios);
  *     tags:
  *       - Usuarios
  *     summary: Obtiene un usuario por ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -111,8 +107,6 @@ router.get("/:id", validate_jwt_1.validateJWT, usuario_controller_1.getUnUsuario
  *     tags:
  *       - Usuarios
  *     summary: Actualiza un usuario por ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -146,8 +140,6 @@ router.put("/:id", validate_jwt_1.validateJWT, usuario_controller_1.updateUsuari
  *     tags:
  *       - Usuarios
  *     summary: Elimina un usuario por ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id

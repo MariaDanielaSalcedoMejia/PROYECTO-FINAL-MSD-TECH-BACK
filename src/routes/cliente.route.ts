@@ -15,13 +15,11 @@ const router = Router();
 
 /**
  * @swagger
- * /clientes:
+ * /cliente:
  *   post:
  *     tags:
  *       - Clientes
  *     summary: Crea un nuevo cliente
- *     security:
- *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -42,13 +40,11 @@ router.post("/", validateJWT, crearCliente);
 
 /**
  * @swagger
- * /clientes:
+ * /cliente:
  *   get:
  *     tags:
  *       - Clientes
  *     summary: Obtiene una lista de todos los clientes
- *     security:
- *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Lista de clientes
@@ -63,13 +59,11 @@ router.get("/", validateJWT, getClientes);
 
 /**
  * @swagger
- * /clientes/{id}:
+ * /cliente/{id}:
  *   get:
  *     tags:
  *       - Clientes
  *     summary: Obtiene un cliente por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -91,13 +85,11 @@ router.get("/:id", validateJWT, getCliente);
 
 /**
  * @swagger
- * /clientes/{id}:
+ * /cliente/{id}:
  *   delete:
  *     tags:
  *       - Clientes
  *     summary: Elimina un cliente por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -115,13 +107,11 @@ router.delete("/:id", validateJWT, eliminarCliente);
 
 /**
  * @swagger
- * /clientes/{id}:
+ * /cliente/{id}:
  *   put:
  *     tags:
  *       - Clientes
  *     summary: Actualiza un cliente por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id

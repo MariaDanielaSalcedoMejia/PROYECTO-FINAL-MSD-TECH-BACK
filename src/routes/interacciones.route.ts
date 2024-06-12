@@ -15,13 +15,11 @@ const router = Router();
 
 /**
  * @swagger
- * /interacciones:
+ * /interaccione:
  *   post:
  *     tags:
  *       - Interacciones
  *     summary: Crea una nueva interacción
- *     security:
- *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -42,13 +40,11 @@ router.post("/", validateJWT, crearInteraccion);
 
 /**
  * @swagger
- * /interacciones:
+ * /interaccione:
  *   get:
  *     tags:
  *       - Interacciones
  *     summary: Obtiene una lista de todas las interacciones
- *     security:
- *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Lista de interacciones
@@ -63,13 +59,11 @@ router.get("/", validateJWT, getInteracciones);
 
 /**
  * @swagger
- * /interacciones/{id}:
+ * /interaccione/{id}:
  *   get:
  *     tags:
  *       - Interacciones
  *     summary: Obtiene una interacción por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -91,13 +85,11 @@ router.get("/:id", validateJWT, getInteraccion);
 
 /**
  * @swagger
- * /interacciones/{id}:
+ * /interaccione/{id}:
  *   delete:
  *     tags:
  *       - Interacciones
  *     summary: Elimina una interacción por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -115,13 +107,11 @@ router.delete("/:id", validateJWT, eliminarInteraccion);
 
 /**
  * @swagger
- * /interacciones/{id}:
+ * /interaccione/{id}:
  *   put:
  *     tags:
  *       - Interacciones
  *     summary: Actualiza una interacción por su ID
- *     security:
- *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
