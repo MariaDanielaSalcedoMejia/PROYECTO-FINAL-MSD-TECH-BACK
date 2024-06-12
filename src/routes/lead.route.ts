@@ -44,7 +44,7 @@ const router = Router();
  *       400:
  *         description: Error en la solicitud
  */
-router.post("/", validateJWT, crearLead);
+router.post("/",  crearLead);
 
 /**
  * @swagger
@@ -63,7 +63,7 @@ router.post("/", validateJWT, crearLead);
  *               items:
  *                 $ref: '#/components/schemas/leads'
  */
-router.get("/", validateJWT, getLeads);
+router.get("/",  getLeads);
 
 /**
  * @swagger
@@ -89,7 +89,7 @@ router.get("/", validateJWT, getLeads);
  *       404:
  *         description: Lead no encontrado
  */
-router.get("/:id", validateJWT, getLead);
+router.get("/:id",  getLead);
 
 /**
  * @swagger
@@ -111,7 +111,7 @@ router.get("/:id", validateJWT, getLead);
  *       404:
  *         description: Lead no encontrado
  */
-router.delete("/:id", validateJWT, eliminarLead);
+router.delete("/:id", eliminarLead);
 
 /**
  * @swagger
@@ -145,6 +145,6 @@ router.delete("/:id", validateJWT, eliminarLead);
  *       404:
  *         description: Lead no encontrado
  */
-router.put("/:id", validateJWT, updatelead);
+router.put("/:id", updatelead);
 
 export default router;

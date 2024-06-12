@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const validate_jwt_1 = require("../middlewares/validate-jwt");
 const lead_controller_1 = require("./../controllers/lead.controller");
 const express_1 = require("express");
 //creando path
@@ -37,7 +36,7 @@ const router = (0, express_1.Router)();
  *       400:
  *         description: Error en la solicitud
  */
-router.post("/", validate_jwt_1.validateJWT, lead_controller_1.crearLead);
+router.post("/", lead_controller_1.crearLead);
 /**
  * @swagger
  * /lead:
@@ -55,7 +54,7 @@ router.post("/", validate_jwt_1.validateJWT, lead_controller_1.crearLead);
  *               items:
  *                 $ref: '#/components/schemas/leads'
  */
-router.get("/", validate_jwt_1.validateJWT, lead_controller_1.getLeads);
+router.get("/", lead_controller_1.getLeads);
 /**
  * @swagger
  * /lead/{id}:
@@ -80,7 +79,7 @@ router.get("/", validate_jwt_1.validateJWT, lead_controller_1.getLeads);
  *       404:
  *         description: Lead no encontrado
  */
-router.get("/:id", validate_jwt_1.validateJWT, lead_controller_1.getLead);
+router.get("/:id", lead_controller_1.getLead);
 /**
  * @swagger
  * /lead/{id}:
@@ -101,7 +100,7 @@ router.get("/:id", validate_jwt_1.validateJWT, lead_controller_1.getLead);
  *       404:
  *         description: Lead no encontrado
  */
-router.delete("/:id", validate_jwt_1.validateJWT, lead_controller_1.eliminarLead);
+router.delete("/:id", lead_controller_1.eliminarLead);
 /**
  * @swagger
  * /lead/{id}:
@@ -134,6 +133,6 @@ router.delete("/:id", validate_jwt_1.validateJWT, lead_controller_1.eliminarLead
  *       404:
  *         description: Lead no encontrado
  */
-router.put("/:id", validate_jwt_1.validateJWT, lead_controller_1.updatelead);
+router.put("/:id", lead_controller_1.updatelead);
 exports.default = router;
 //# sourceMappingURL=lead.route.js.map
