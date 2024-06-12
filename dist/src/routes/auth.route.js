@@ -8,7 +8,7 @@ const validate_jwt_1 = require("../middlewares/validate-jwt");
 const router = (0, express_1.Router)();
 /**
  * @swagger
- * /auth:
+ * /login:
  *   post:
  *     tags:
  *       - Login

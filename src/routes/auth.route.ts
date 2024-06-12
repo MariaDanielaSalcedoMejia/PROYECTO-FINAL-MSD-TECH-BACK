@@ -13,7 +13,7 @@ const router = Router();
 
 /**
  * @swagger
- * /auth:
+ * /login:
  *   post:
  *     tags:
  *       - Login
