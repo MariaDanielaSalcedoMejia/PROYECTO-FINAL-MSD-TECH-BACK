@@ -24,16 +24,16 @@ const router = (0, express_1.Router)();
  *             properties:
  *               nombre:
  *                 type: string
- *                 description: El nombre del usuario.
+ *
  *               email:
  *                 type: string
  *                 format: email
- *                 description: El correo electrónico del usuario.
+ *
  *              tipoDocumento:
  *                 type:string
  *              numeroDocumento:
  *                 type: string
- *                 description: El número de documento del usuario.
+ *
  *              numeroCelular:
  *                 type: number
  *              password:
@@ -55,7 +55,7 @@ const router = (0, express_1.Router)();
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/usuarios'
  *       400:
  *         description: Error en la solicitud
  */
