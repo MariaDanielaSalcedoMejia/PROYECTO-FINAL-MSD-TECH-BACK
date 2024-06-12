@@ -33,7 +33,7 @@ const router = Router();
  *       400:
  *         description: Error en la solicitud
  */
-router.post("/", validateJWT, crearInteraccion);
+router.post("/",  crearInteraccion);
 
 /**
  * @swagger
@@ -52,7 +52,7 @@ router.post("/", validateJWT, crearInteraccion);
  *               items:
  *                 $ref: '#/components/schemas/interacciones'
  */
-router.get("/", validateJWT, getInteracciones);
+router.get("/",  getInteracciones);
 
 /**
  * @swagger
@@ -78,7 +78,7 @@ router.get("/", validateJWT, getInteracciones);
  *       404:
  *         description: Interacción no encontrada
  */
-router.get("/:id", validateJWT, getInteraccion);
+router.get("/:id",  getInteraccion);
 
 /**
  * @swagger
@@ -100,7 +100,7 @@ router.get("/:id", validateJWT, getInteraccion);
  *       404:
  *         description: Interacción no encontrada
  */
-router.delete("/:id", validateJWT, eliminarInteraccion);
+router.delete("/:id",  eliminarInteraccion);
 
 /**
  * @swagger
@@ -144,6 +144,6 @@ router.delete("/:id", validateJWT, eliminarInteraccion);
  *       404:
  *         description: Interacción no encontrada
  */
-router.put("/:id", validateJWT, updateInteraccion);
+router.put("/:id",  updateInteraccion);
 
 export default router;

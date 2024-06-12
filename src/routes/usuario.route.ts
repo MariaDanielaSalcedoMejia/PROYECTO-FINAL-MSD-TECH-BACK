@@ -8,7 +8,7 @@ import { Router } from "express";
 import { crearUsuario } from "../controllers/usuario.controller";
 import { check } from "express-validator";
 import { validateFields } from "../middlewares/validate-fields";
-import { validateJWT } from "../middlewares/validate-jwt";
+
 
 const router = Router();
 
@@ -117,7 +117,7 @@ router.get("/", getUsuarios);
  *       404:
  *         description: Usuario no encontrado
  */
-router.get("/:id", validateJWT, getUnUsuario);
+router.get("/:id",  getUnUsuario);
 
 /**
  * @swagger
@@ -151,7 +151,7 @@ router.get("/:id", validateJWT, getUnUsuario);
  *       404:
  *         description: Usuario no encontrado
  */
-router.put("/:id", validateJWT, updateUsuario);
+router.put("/:id",  updateUsuario);
 
 /**
  * @swagger
@@ -173,6 +173,6 @@ router.put("/:id", validateJWT, updateUsuario);
  *       404:
  *         description: Usuario no encontrado
  */
-router.delete("/:id", validateJWT, eliminarUsuario);
+router.delete("/:id",  eliminarUsuario);
 
 export default router;

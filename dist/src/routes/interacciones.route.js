@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const validate_jwt_1 = require("../middlewares/validate-jwt");
 const interacciones_controller_1 = require("../controllers/interacciones.controller");
 const router = (0, express_1.Router)();
 /**
@@ -27,7 +26,7 @@ const router = (0, express_1.Router)();
  *       400:
  *         description: Error en la solicitud
  */
-router.post("/", validate_jwt_1.validateJWT, interacciones_controller_1.crearInteraccion);
+router.post("/", interacciones_controller_1.crearInteraccion);
 /**
  * @swagger
  * /interaccion:
@@ -45,7 +44,7 @@ router.post("/", validate_jwt_1.validateJWT, interacciones_controller_1.crearInt
  *               items:
  *                 $ref: '#/components/schemas/interacciones'
  */
-router.get("/", validate_jwt_1.validateJWT, interacciones_controller_1.getInteracciones);
+router.get("/", interacciones_controller_1.getInteracciones);
 /**
  * @swagger
  * /interaccion/{id}:
@@ -70,7 +69,7 @@ router.get("/", validate_jwt_1.validateJWT, interacciones_controller_1.getIntera
  *       404:
  *         description: Interacción no encontrada
  */
-router.get("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.getInteraccion);
+router.get("/:id", interacciones_controller_1.getInteraccion);
 /**
  * @swagger
  * /interaccion/{id}:
@@ -91,7 +90,7 @@ router.get("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.getInt
  *       404:
  *         description: Interacción no encontrada
  */
-router.delete("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.eliminarInteraccion);
+router.delete("/:id", interacciones_controller_1.eliminarInteraccion);
 /**
  * @swagger
  * /interaccion/{id}:
@@ -134,6 +133,6 @@ router.delete("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.eli
  *       404:
  *         description: Interacción no encontrada
  */
-router.put("/:id", validate_jwt_1.validateJWT, interacciones_controller_1.updateInteraccion);
+router.put("/:id", interacciones_controller_1.updateInteraccion);
 exports.default = router;
 //# sourceMappingURL=interacciones.route.js.map

@@ -5,7 +5,6 @@ const express_1 = require("express");
 const usuario_controller_2 = require("../controllers/usuario.controller");
 const express_validator_1 = require("express-validator");
 const validate_fields_1 = require("../middlewares/validate-fields");
-const validate_jwt_1 = require("../middlewares/validate-jwt");
 const router = (0, express_1.Router)();
 /**
  * @swagger
@@ -106,7 +105,7 @@ router.get("/", usuario_controller_1.getUsuarios);
  *       404:
  *         description: Usuario no encontrado
  */
-router.get("/:id", validate_jwt_1.validateJWT, usuario_controller_1.getUnUsuario);
+router.get("/:id", usuario_controller_1.getUnUsuario);
 /**
  * @swagger
  * /usuario/{id}:
@@ -139,7 +138,7 @@ router.get("/:id", validate_jwt_1.validateJWT, usuario_controller_1.getUnUsuario
  *       404:
  *         description: Usuario no encontrado
  */
-router.put("/:id", validate_jwt_1.validateJWT, usuario_controller_1.updateUsuario);
+router.put("/:id", usuario_controller_1.updateUsuario);
 /**
  * @swagger
  * /usuario/{id}:
@@ -160,6 +159,6 @@ router.put("/:id", validate_jwt_1.validateJWT, usuario_controller_1.updateUsuari
  *       404:
  *         description: Usuario no encontrado
  */
-router.delete("/:id", validate_jwt_1.validateJWT, usuario_controller_1.eliminarUsuario);
+router.delete("/:id", usuario_controller_1.eliminarUsuario);
 exports.default = router;
 //# sourceMappingURL=usuario.route.js.map

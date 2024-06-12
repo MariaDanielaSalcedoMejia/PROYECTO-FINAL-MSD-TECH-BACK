@@ -1,4 +1,4 @@
-import { validateJWT } from "../middlewares/validate-jwt";
+
 import {
   crearLead,
   eliminarLead,

@@ -72,7 +72,7 @@ router.get("/", validate_jwt_1.validateJWT, cliente_controller_1.getClientes);
  *       404:
  *         description: Cliente no encontrado
  */
-router.get("/:id", validate_jwt_1.validateJWT, cliente_controller_1.getCliente);
+router.get("/:id", cliente_controller_1.getCliente);
 /**
  * @swagger
  * /cliente/{id}:
@@ -93,7 +93,7 @@ router.get("/:id", validate_jwt_1.validateJWT, cliente_controller_1.getCliente);
  *       404:
  *         description: Cliente no encontrado
  */
-router.delete("/:id", validate_jwt_1.validateJWT, cliente_controller_1.eliminarCliente);
+router.delete("/:id", cliente_controller_1.eliminarCliente);
 /**
  * @swagger
  * /cliente/{id}:
@@ -126,6 +126,6 @@ router.delete("/:id", validate_jwt_1.validateJWT, cliente_controller_1.eliminarC
  *       404:
  *         description: Cliente no encontrado
  */
-router.put("/:id", validate_jwt_1.validateJWT, cliente_controller_1.updateCliente);
+router.put("/:id", cliente_controller_1.updateCliente);
 exports.default = router;
 //# sourceMappingURL=cliente.route.js.map

@@ -81,7 +81,7 @@ router.get("/", validateJWT, getClientes);
  *       404:
  *         description: Cliente no encontrado
  */
-router.get("/:id", validateJWT, getCliente);
+router.get("/:id",  getCliente);
 
 /**
  * @swagger
@@ -103,7 +103,7 @@ router.get("/:id", validateJWT, getCliente);
  *       404:
  *         description: Cliente no encontrado
  */
-router.delete("/:id", validateJWT, eliminarCliente);
+router.delete("/:id",  eliminarCliente);
 
 /**
  * @swagger
@@ -137,6 +137,6 @@ router.delete("/:id", validateJWT, eliminarCliente);
  *       404:
  *         description: Cliente no encontrado
  */
-router.put("/:id", validateJWT, updateCliente);
+router.put("/:id",  updateCliente);
 
 export default router;
