@@ -6,8 +6,8 @@ import clienteRoutes from "./routes/cliente.route";
 import leadRoutes from "./routes/lead.route";
 import authRoutes from "./routes/auth.route";
 import interaccionRoutes from "./routes/interacciones.route";
-
-
+import swaggerUi from "swagger-ui-express";
+import swaggerSetup from "./docs/swagger"; // Ruta correcta al archivo de configuración de Swagger
 
 class Server {
   private app: Application;
@@ -18,21 +18,24 @@ class Server {
     cliente: "/api/v1/cliente",
     lead: "/api/v1/lead",
     interaccion: "/api/v1/interaccion",
-
   };
 
   constructor() {
     this.app = express();
     this.port = process.env.PORT || "3000";
+    this.app.use(
+      "/documentation",
+      swaggerUi.serve,
+      swaggerUi.setup(swaggerSetup)
+    );
 
-    //Base de datos
+    // Base de datos
     dbconnection();
 
-    //Medtodos Iniciales
+    // Métodos Iniciales
     this.middlewares();
 
-    //Rutas
-
+    // Rutas
     this.routes();
   }
 
@@ -47,7 +50,7 @@ class Server {
   middlewares() {
     this.app.use(cors());
 
-    //Lectura del Body en json
+    // Lectura del Body en json
     this.app.use(express.json());
 
     this.miPrimerApi();
@@ -59,12 +62,11 @@ class Server {
     this.app.use(this.apiPaths.lead, leadRoutes);
     this.app.use(this.apiPaths.login, authRoutes);
     this.app.use(this.apiPaths.interaccion, interaccionRoutes);
-  
   }
 
   listen(): void {
     this.app.listen(this.port, () => {
-      console.log("servidor corriendo por el puerto", this.port);
+      console.log("Servidor corriendo por el puerto", this.port);
     });
   }
 }

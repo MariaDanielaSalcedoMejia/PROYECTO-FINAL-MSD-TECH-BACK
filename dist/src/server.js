@@ -11,6 +11,8 @@ const cliente_route_1 = __importDefault(require("./routes/cliente.route"));
 const lead_route_1 = __importDefault(require("./routes/lead.route"));
 const auth_route_1 = __importDefault(require("./routes/auth.route"));
 const interacciones_route_1 = __importDefault(require("./routes/interacciones.route"));
+const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
+const swagger_1 = __importDefault(require("./docs/swagger")); // Ruta correcta al archivo de configuración de Swagger
 class Server {
     constructor() {
         this.apiPaths = {
@@ -22,11 +24,12 @@ class Server {
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || "3000";
-        //Base de datos
+        this.app.use("/documentation", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swagger_1.default));
+        // Base de datos
         (0, connection_1.dbconnection)();
-        //Medtodos Iniciales
+        // Métodos Iniciales
         this.middlewares();
-        //Rutas
+        // Rutas
         this.routes();
     }
     miPrimerApi() {
@@ -36,7 +39,7 @@ class Server {
     }
     middlewares() {
         this.app.use((0, cors_1.default)());
-        //Lectura del Body en json
+        // Lectura del Body en json
         this.app.use(express_1.default.json());
         this.miPrimerApi();
     }
@@ -49,7 +52,7 @@ class Server {
     }
     listen() {
         this.app.listen(this.port, () => {
-            console.log("servidor corriendo por el puerto", this.port);
+            console.log("Servidor corriendo por el puerto", this.port);
         });
     }
 }
